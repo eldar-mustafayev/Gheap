@@ -15,14 +15,16 @@ Due to it's special logic, it's very reusable: The complexity of clear operation
 
 typedef std::pair<unsigned, size_t> edge;
 
-unsigned size;
+unsigned n, m;
 std::vector<edge> G[N];
 
 size_t dijkstra(int s, int t)
 {
 	unsigned v;
 	size_t path;
-	static Gheap<N> H;
+	
+	static unsigned n_childs = std::max(n_edges / n_nodes, 2U);
+	static Gheap<N> H(n_childs);
 
 	H.insert(s, 0);
 	while (!H.empty())
