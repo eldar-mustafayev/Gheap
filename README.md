@@ -18,25 +18,29 @@ typedef std::pair<unsigned, size_t> edge;
 unsigned size;
 std::vector<edge> G[N];
 
-size_t dijkstra(int u, int v)
+size_t dijkstra(int s, int t)
 {
-    unsigned v;
-    size_t path;
+	unsigned v;
+	size_t path;
 	static Gheap<N> H;
 
-	H.insert(u, 0);
+	H.insert(s, 0);
 	while (!H.empty())
 	{
-		u = H.top().first; H.pop();
+		s = H.top().first; path = H.top().second;
+		H.pop();
 
-		if (u == v)
-			return H.dist(u);
-
-        for (edge& i : G[u])
+		if (s == t)
 		{
-            v = i.first;
-            path = H.dist(u) + i.second;
-            if (path < H.dist(v))
+			H.clear();
+			return path;
+		}
+			
+		for (edge& i : G[s])
+		{
+			v = i.first;
+			path = H.dist(s) + i.second;
+			if (path < H.dist(v))
                 H.insert(v, path);
 		}
 	}
