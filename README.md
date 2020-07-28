@@ -33,12 +33,12 @@ size_t dijkstra(int u, int v)
 			return H.dist(u);
 
         for (edge& i : G[u])
-        {
+		{
             v = i.first;
             path = H.dist(u) + i.second;
             if (path < H.dist(v))
                 H.insert(v, path);
-        }
+		}
 	}
 }
 ```
