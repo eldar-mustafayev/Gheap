@@ -6,10 +6,10 @@ The main difference from ordinary d-ary heap is that it uses array named "map" w
 With "map" array we can perform decrease-key operation and get distance.
 Due to it's special logic, it's very reusable: The complexity of clear operation O(1)!
 
-Example:
+>Example:
 
-
-'#include <vector>
+```
+#include <vector>
 #include <iostream>
 #include "gheap.h"
 
@@ -40,5 +40,5 @@ size_t dijkstra(int u, int v)
                 H.insert(v, path);
         }
 	}
-}'
-
+}
+```
