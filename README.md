@@ -41,7 +41,7 @@ size_t dijkstra(int s, int t)
 			v = i.first;
 			path = H.dist(s) + i.second;
 			if (path < H.dist(v))
-                H.insert(v, path);
+				H.insert(v, path);
 		}
 	}
 }
