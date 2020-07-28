@@ -15,7 +15,7 @@ Due to it's special logic, it's very reusable: The complexity of clear operation
 
 typedef std::pair<unsigned, size_t> edge;
 
-unsigned n, m;
+unsigned n_edges, n_nodes;
 std::vector<edge> G[N];
 
 size_t dijkstra(int s, int t)
