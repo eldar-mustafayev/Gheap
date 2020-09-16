@@ -1,10 +1,8 @@
 # Gheap
-This is special d-ary heap which specifically designed for shortest path algorithms like Dijkstra and A-star.
-This is fast, memory efficient and reusable!
+This is a special d-ary heap which specifically designed for the shortest path algorithms like Dijkstra and A-star.
 
-The main difference from ordinary d-ary heap is that it uses array named "map" which store index number of vertex in underlying array of heap.
-With "map" array we can perform decrease-key operation and get distance. 
-Due to it's special logic, it's very reusable: The complexity of clear operation O(1)! 
+The main difference from ordinary d-ary heap is that it uses additional array, namely "map" which stores the indexes of vertices from underlying array of heap.
+As a result, it is faster(the delete & insert operation replaced with more convenient operation (decrease-key)), more memory efficient(there is no need to declare the distance array outside, as it can be used from inside of the heap) and more reusable(due to special trick, the complexity of clear operation O(1))!
 
 >Example:
 
