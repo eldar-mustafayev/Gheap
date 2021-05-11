@@ -1,9 +1,9 @@
 # Gheap
 This is a special d-ary heap which specifically designed for the shortest path algorithms like Dijkstra and A-star.
 
-The main difference from ordinary d-ary heap is that it uses special structure which allows it to store and use the indexes of vertices from underlying array of heap. As a result, it is faster(the delete & insert operation replaced with more convenient operation (decrease-key)), more memory efficient(there is no need to declare the distance array outside, as it can be used from inside of the heap) and more reusable(due to special trick, the complexity of clear operation O(1))!
+The main difference from ordinary d-ary heap is that it uses special structure which allows it to store and use the indexes of vertices from underlying array of heap. As a result, it is faster (the delete & insert operation replaced with more convenient operation (decrease-key)), more memory efficient (there is no need to declare the distance array outside, as it can be used from inside of the heap) and more reusable (with special trick the complexity of clear operation decreased to O(1))!
 
->Example:
+>### Example:
 
 ```
 #include <vector>
